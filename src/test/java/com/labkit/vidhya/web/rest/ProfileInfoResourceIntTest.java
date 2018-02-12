@@ -1,5 +1,7 @@
 package com.labkit.vidhya.web.rest;
 
+import com.labkit.vidhya.security.AuthoritiesConstants;
+import com.labkit.vidhya.security.jwt.TokenProvider;
 import io.github.jhipster.config.JHipsterProperties;
 import com.labkit.vidhya.VibirestApp;
 import org.junit.Before;
@@ -10,9 +12,13 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import java.util.Collections;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
