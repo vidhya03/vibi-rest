@@ -1,0 +1,36 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.labkit.vidhya"
+    },
+    "jhipsterVersion": "4.12.0",
+    "baseName": "vibirest",
+    "packageName": "com.labkit.vidhya",
+    "packageFolder": "com/labkit/vidhya",
+    "serverPort": "9091",
+    "authenticationType": "jwt",
+    "hibernateCache": "no",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "no",
+    "devDatabaseType": "no",
+    "prodDatabaseType": "no",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSocialSignIn": false,
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "40b89dffd6b28f6bfbc75db4f0e340081d9ba2aa",
+    "enableTranslation": false,
+    "applicationType": "microservice",
+    "testFrameworks": [
+      "cucumber"
+    ],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "clientPackageManager": "yarn",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
