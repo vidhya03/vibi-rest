@@ -24,7 +24,8 @@ public class JWTFilterTest {
         JHipsterProperties jHipsterProperties = new JHipsterProperties();
         tokenProvider = new TokenProvider(jHipsterProperties);
         ReflectionTestUtils.setField(tokenProvider, "secretKey", "my-secret-token-to-change-in-production");
-        ReflectionTestUtils.setField(tokenProvider, "tokenValidityInMilliseconds", 60000);
+        ReflectionTestUtils.setField(tokenProvider, "tokenValidityInMilliseconds", 86400);// # Token is valid 24 hours
+        ReflectionTestUtils.setField(tokenProvider, "tokenValidityInMillisecondsForRememberMe", 2592000);
         jwtFilter = new JWTFilter(tokenProvider);
         SecurityContextHolder.getContext().setAuthentication(null);
     }
@@ -36,7 +37,7 @@ public class JWTFilterTest {
             "user",
             Collections.singletonList(new SimpleGrantedAuthority(AuthoritiesConstants.USER))
         );
-        String jwt = tokenProvider.createToken(authentication, false);
+        String jwt = tokenProvider.createToken(authentication, true);
         System.out.println("jwt = " + jwt);
 //        verifying the jwt with secret keys
     }
