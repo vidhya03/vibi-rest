@@ -38,5 +38,6 @@ public class JWTFilterTest {
         );
         String jwt = tokenProvider.createToken(authentication, false);
         System.out.println("jwt = " + jwt);
+//        verifying the jwt with secret keys
     }
 }
